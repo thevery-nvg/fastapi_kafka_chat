@@ -13,7 +13,7 @@ class Text(BaseValueObject):
             raise EmptyTextException()
 
     def as_generic_type(self):
-        return super().as_generic_type()
+        return str(self.value)
 
 
 @dataclass(frozen=True)
@@ -25,4 +25,4 @@ class Title(BaseValueObject):
             raise TitleTooLongException(self.value)
 
     def as_generic_type(self):
-        return super().as_generic_type()
+        return str(self.value)
